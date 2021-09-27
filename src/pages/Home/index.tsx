@@ -25,12 +25,12 @@ const Home = (): JSX.Element => {
   const [products, setProducts] = useState<ProductFormatted[]>([]);
   const { addProduct, cart } = useCart();
 
- // const cartItemsAmount = cart.reduce((sumAmount, product) => {
- //   if (product.id === 1){
-	//	sumAmount += 1;
-//	}
-//	return sumAmount;
-//  }, {id: 0, quant: 0} as CartItemsAmount)
+  const cartItemsAmount = cart.reduce((sumAmount, product) => {
+	const newSumAmount = {...sumAmount};
+	newSumAmount[product.id] = product.amount
+	console.log(newSumAmount)
+	return newSumAmount;
+  }, {} as CartItemsAmount)
 
   useEffect(() => {
     async function loadProducts() {
@@ -65,7 +65,7 @@ const Home = (): JSX.Element => {
 							>
 							<div data-testid="cart-product-quantity">
 								<MdAddShoppingCart size={16} color="#FFF" />
-								{/*cartItemsAmount[product.id] || 0*/}
+								{ cartItemsAmount[product.id] || 0 }
 							</div>
 
 							<span>ADICIONAR AO CARRINHO</span>
