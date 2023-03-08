@@ -18,8 +18,8 @@ Terceiro desafio da trilha de React do Ignite da Rocketseat. Nesse projeto é 
 ## 🏁 How to run the project
 #### Clone the repository
 ```bash
-git clone https://github.com/rafinhaa/ignite-reactjs-desafio-03
-cd ignite-desafio-03
+git clone https://github.com/rafinhaa/rocketshoes
+cd rocketshoes
 ```
 
 #### Install dependencies
